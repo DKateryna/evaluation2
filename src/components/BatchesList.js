@@ -6,7 +6,7 @@ import React from 'react';
   const batches = props.batches;
   const BatchesList = batches.map(batch =>
     <li>
-      {batch.number}
+      Batch #{batch.number} from: {batch.startDate} to: {batch.endDate}
     </li>
   );
   return(

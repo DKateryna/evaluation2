@@ -16,8 +16,10 @@ class App extends Component {
     this.state = {batches: [], nextBatchNumber: 1};
   }
 
-  addBatch(){
+  addBatch(startDate, endDate){
     let newBatches = [...this.state.batches, {
+      startDate: startDate,
+      endDate: endDate,
       number: this.state.nextBatchNumber
     }];
 
@@ -42,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AddBatch onClick={() => this.addBatch()} />
+        <AddBatch onClick={(startDate, endDate) => this.addBatch(startDate, endDate)} />
         <BatchesList batches={this.state.batches} />
       </div>
     );
