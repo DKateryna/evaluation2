@@ -1,13 +1,11 @@
 import React from 'react';
+import Batch from './Batch';
 
 
  function BatchesList(props) {
-  // const batches = ['batch#1', 'batch#2'];
   const batches = props.batches;
   const BatchesList = batches.map(batch =>
-    <li>
-      Batch #{batch.number} from: {batch.startDate} to: {batch.endDate}
-    </li>
+    <Batch {...batch} addStudent={props.addStudent} />
   );
   return(
     <ul>
